@@ -25,16 +25,9 @@ if memo_type=="1"
 
     #メモの内容を入力。保存。
         puts "メモしたい内容を入力してください"
-        puts "終了するには「.exit」を入力して下さい"
-        count =0
-        loop do
-            file_text=gets.to_s.rstrip
-            if file_text == ".exit"
-                break
-            end
-            csv << [file_text]
-        end
-       
+        puts "終了するにはcontrol+dを入力して下さい"
+        file_text=$stdin.read
+        csv << [file_text]
     end
     
 #==========既存メモの編集==========================================================
@@ -55,13 +48,8 @@ elsif memo_type=="2"
     p files_csv[file_num-1]
     csv=CSV.open(files_csv[file_num-1],"a")
     puts "メモしたい内容を入力してください"
-    puts "終了するには「.exit」を入力して下さい"
-    loop do
-        file_text=gets.to_s.rstrip
-        if file_text == ".exit"
-            break
-        end
-        csv << [file_text]
-    end
+    puts "終了するにはcontrol+dを入力して下さい"
+    file_text=$stdin.read
+    csv << [file_text]
 end
 
