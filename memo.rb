@@ -24,9 +24,9 @@ if memo_type=="1"
         csv=CSV.open("#{file_name_csv}","a")
 
     #メモの内容を入力。保存。
-        puts "メモしたい内容を入力してください"
-        puts "終了するにはcontrol+dを入力して下さい"
-        file_text=$stdin.read
+        puts "メモしたい内容を入力してください"     
+        puts "終了するにはcontrol+dを入力して下さい"     #修正箇所
+        file_text=$stdin.read                       #修正箇所
         csv << [file_text]
     end
     
@@ -48,8 +48,8 @@ elsif memo_type=="2"
     p files_csv[file_num-1]
     csv=CSV.open(files_csv[file_num-1],"a")
     puts "メモしたい内容を入力してください"
-    puts "終了するにはcontrol+dを入力して下さい"
-    file_text=$stdin.read
+    puts "終了するにはcontrol+dを入力して下さい" #修正箇所
+    file_text=$stdin.read                   #修正箇所
     csv << [file_text]
 end
 
